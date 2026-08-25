@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hacker for a Day</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="progress-bar" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+
+<header class="topbar">
+  <span class="brand">HACKER <em>FOR A DAY</em></span>
+  <span class="counter" id="counter">01 / 12</span>
+</header>
+
+<main id="deck">
+
+  <!-- 01 COVER -->
+  <section class="slide" id="s1" data-index="1">
+    <div class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">WORKSHOP · CLASA A IX-A</p>
+        <h1 class="display">HACKER<br><em>FOR A DAY</em></h1>
+        <p class="lead">O introducere practică în hacking, cybersecurity și CTF-uri.</p>
+        <p class="meta-line"><span>15 MIN THEORY</span><span class="dot">·</span><span>90 MIN HANDS-ON</span></p>
+        <button class="btn btn-primary" id="startBtn">START <span class="arrow">→</span></button>
+        <div class="boot-line" id="bootLine" aria-hidden="true"></div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 480 480" class="net-svg" id="netSvg"></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 CE INSEAMNA HACKING -->
+  <section class="slide" id="s2" data-index="2">
+    <div class="container narrow">
+      <p class="eyebrow">MINDSET</p>
+      <h2 class="h-display">Hacking-ul nu înseamnă<br>să tastezi rapid.</h2>
+      <p class="lead-quote">„Totul începe cu o întrebare: de ce funcționează lucrurile așa?”</p>
+      <div class="triad">
+        <div class="triad-item">
+          <span class="triad-num">01</span>
+          <h3>OBSERVĂ</h3>
+          <p>Ce se întâmplă?</p>
+        </div>
+        <div class="triad-item">
+          <span class="triad-num">02</span>
+          <h3>ÎNȚELEGE</h3>
+          <p>De ce se întâmplă?</p>
+        </div>
+        <div class="triad-item">
+          <span class="triad-num">03</span>
+          <h3>TESTEAZĂ</h3>
+          <p>Ce se întâmplă dacă schimb ceva?</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 CUM FUNCTIONEAZA UN SITE -->
+  <section class="slide" id="s3" data-index="3">
+    <div class="container">
+      <p class="eyebrow">SUB SUPRAFAȚĂ</p>
+      <h2 class="h-display">Un site nu este<br>doar ce vezi.</h2>
+      <div class="flow-diagram">
+        <div class="flow-node">BROWSER</div>
+        <div class="flow-arrow">↓ request</div>
+        <div class="flow-node">SERVER</div>
+        <div class="flow-arrow">↓ response</div>
+        <div class="flow-node">BROWSER</div>
+      </div>
+      <div class="chip-row">
+        <span class="chip">HTML</span>
+        <span class="chip">CSS</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">HTTP</span>
+        <span class="chip">SERVER</span>
+        <span class="chip">DATABASE</span>
+      </div>
+      <p class="footnote">În spatele unei pagini aparent simple există un sistem întreg.</p>
+    </div>
+  </section>
+
+  <!-- 04 HTTP + DEVTOOLS -->
+  <section class="slide" id="s4" data-index="4">
+    <div class="container">
+      <p class="eyebrow">LIVE DEMO PE LAPTOP</p>
+      <h2 class="h-display">Hai să ne uităm<br>sub capotă.</h2>
+      <div class="split">
+        <div class="panel code-panel">
+          <div class="panel-head"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="panel-title">request.http</span></div>
+          <pre class="code"><span class="c-kw">GET</span> /profile
+<span class="c-key">Host:</span> example.com</pre>
+        </div>
+        <div class="flow-arrow flow-arrow-h">→</div>
+        <div class="panel code-panel">
+          <div class="panel-head"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="panel-title">response.http</span></div>
+          <pre class="code"><span class="c-ok">HTTP/1.1 200 OK</span></pre>
+        </div>
+      </div>
+      <div class="status-row">
+        <span class="status status-ok">200 OK</span>
+        <span class="status status-warn">404 Not Found</span>
+        <span class="status status-err">403 Forbidden</span>
+        <span class="status status-err">500 Server Error</span>
+      </div>
+      <div class="devtools-mock">
+        <div class="dt-tabs">
+          <span class="dt-tab">Elements</span>
+          <span class="dt-tab">Console</span>
+          <span class="dt-tab dt-tab-active">Network</span>
+        </div>
+        <div class="dt-network">
+          <div class="dt-row"><span>GET /index.html</span><span class="status-ok">200</span></div>
+          <div class="dt-row"><span>GET /style.css</span><span class="status-ok">200</span></div>
+          <div class="dt-row"><span>GET /script.js</span><span class="status-ok">200</span></div>
+        </div>
+      </div>
+      <p class="footnote">Browserul și serverul comunică prin request-uri și response-uri. Deschide DevTools reale acum și arată-le live.</p>
+    </div>
+  </section>
+
+  <!-- 05 INSPECT ELEMENT -->
+  <section class="slide" id="s5" data-index="5">
+    <div class="container">
+      <p class="eyebrow">DEMO INTERACTIV</p>
+      <h2 class="h-display">Ce vede browserul?</h2>
+      <div class="split">
+        <div class="panel code-panel">
+          <div class="panel-head"><span class="panel-title">index.html</span></div>
+          <textarea id="htmlEditor" class="html-editor" spellcheck="false">&lt;h1&gt;Hello&lt;/h1&gt;
+&lt;p&gt;Welcome!&lt;/p&gt;</textarea>
+        </div>
+        <div class="panel preview-panel">
+          <div class="panel-head"><span class="panel-title">preview</span></div>
+          <div id="htmlPreview" class="html-preview"></div>
+        </div>
+      </div>
+      <div class="qa-card">
+        <p class="qa-q">Dacă schimb ce văd, am schimbat serverul?</p>
+        <p class="qa-a">NU.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 CLIENT VS SERVER -->
+  <section class="slide" id="s6" data-index="6">
+    <div class="container narrow">
+      <p class="eyebrow">DEMO INTERACTIV</p>
+      <h2 class="h-display">Am "spart" site-ul?</h2>
+      <div class="balance-card">
+        <p class="balance-label">BALANCE</p>
+        <p class="balance-value" id="balanceValue">100 RON</p>
+        <button class="btn btn-outline" id="editBalanceBtn">EDIT PAGE</button>
+        <p class="balance-result" id="balanceResult"></p>
+      </div>
+      <div class="cs-grid">
+        <div class="cs-card">
+          <h3>CLIENT-SIDE</h3>
+          <p>Ce controlează browserul.</p>
+        </div>
+        <div class="cs-card">
+          <h3>SERVER-SIDE</h3>
+          <p>Ce controlează serverul.</p>
+        </div>
+      </div>
+      <p class="footnote">Faptul că poți modifica ceea ce vezi în browser nu înseamnă că ai modificat datele reale.</p>
+    </div>
+  </section>
+
+  <!-- 07 URL PARAMS + COOKIES -->
+  <section class="slide" id="s7" data-index="7">
+    <div class="container">
+      <p class="eyebrow">CUM ÎȘI AMINTEȘTE UN SITE</p>
+      <h2 class="h-display">De unde știe site-ul<br>ce să îți arate?</h2>
+      <div class="split">
+        <div class="panel">
+          <div class="panel-head"><span class="panel-title">URL Parameters</span></div>
+          <p class="url-example">https://example.com/profile<span class="c-accent">?id=</span><span id="idDisplay">42</span></p>
+          <div class="url-demo-row">
+            <label for="idInput">id =</label>
+            <input type="number" id="idInput" class="url-input" value="42">
+          </div>
+          <p class="url-output">Output: <span id="idOutput">Profile #42</span></p>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><span class="panel-title">Cookies</span></div>
+          <pre class="code">session_id = 83f9a2
+theme = dark
+language = ro</pre>
+        </div>
+      </div>
+      <p class="footnote">Browserul poate păstra informații pe care site-ul le folosește pentru sesiuni și preferințe.</p>
+    </div>
+  </section>
+
+  <!-- 08 ENCODING vs ENCRYPTION -->
+  <section class="slide" id="s8" data-index="8">
+    <div class="container narrow">
+      <p class="eyebrow">DEMO INTERACTIV</p>
+      <h2 class="h-display">Nu tot ce arată secret<br>este secret.</h2>
+      <div class="panel">
+        <input type="text" id="b64Input" class="text-input" value="Hello Hacker">
+        <div class="btn-row">
+          <button class="btn btn-primary" id="encodeBtn">ENCODE</button>
+          <button class="btn btn-outline" id="decodeBtn">DECODE</button>
+        </div>
+        <p class="url-output">Output: <span id="b64Output">SGVsbG8gSGFja2Vy</span></p>
+      </div>
+      <div class="cs-grid">
+        <div class="cs-card">
+          <h3>ENCODING</h3>
+          <p>Schimbă reprezentarea datelor.</p>
+        </div>
+        <div class="cs-card">
+          <h3>ENCRYPTION</h3>
+          <p>Protejează datele folosind o cheie.</p>
+        </div>
+      </div>
+      <p class="banner">BASE64 ≠ ENCRYPTION</p>
+    </div>
+  </section>
+
+  <!-- 09 TERMINAL -->
+  <section class="slide" id="s9" data-index="9">
+    <div class="container">
+      <p class="eyebrow">SANDBOX</p>
+      <h2 class="h-display">Terminalul nu este magic.</h2>
+      <div class="terminal-window">
+        <div class="panel-head"><span class="dot-r"></span><span class="dot-y"></span><span class="dot-g"></span><span class="panel-title">terminal</span></div>
+        <div class="terminal-body" id="terminalBody"></div>
+        <div class="terminal-input-row">
+          <span class="prompt">&gt;</span>
+          <input type="text" id="terminalInput" class="terminal-input" autocomplete="off" spellcheck="false" aria-label="Terminal input">
+        </div>
+      </div>
+      <p class="footnote">Este doar un terminal simulat în JavaScript. Încearcă: <code>help</code>, <code>ls</code>, <code>cat secret.txt</code></p>
+    </div>
+  </section>
+
+  <!-- 10 OSINT -->
+  <section class="slide" id="s10" data-index="10">
+    <div class="container narrow">
+      <p class="eyebrow">FĂRĂ SĂ SPARGI NIMIC</p>
+      <h2 class="h-display">Nu trebuie să spargi<br>un sistem ca să afli informații.</h2>
+      <p class="osint-def"><strong>OSINT</strong> — Open Source Intelligence</p>
+      <div class="flow-diagram flow-diagram-osint">
+        <div class="flow-node">USERNAME</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">PUBLIC PROFILE</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">POST</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">CONTEXT</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">CORRELATION</div>
+      </div>
+      <div class="panel osint-example">
+        <p><span class="c-muted">username:</span> alex_dev</p>
+        <p><span class="c-muted">post:</span> "Finally finished my first project."</p>
+        <p><span class="c-muted">filename:</span> project_final_v3.zip</p>
+        <p><span class="c-muted">website:</span> alex-dev.example</p>
+      </div>
+      <p class="footnote">Ce informații aparent banale pot deveni utile atunci când sunt corelate? <em>(exemplu complet fictiv)</em></p>
+    </div>
+  </section>
+
+  <!-- 11 CE ESTE UN CTF -->
+  <section class="slide" id="s11" data-index="11">
+    <div class="container">
+      <p class="eyebrow">PUNEM TOTUL ÎMPREUNĂ</p>
+      <h2 class="h-display">Acum le punem<br>pe toate împreună.</h2>
+      <div class="flow-diagram flow-diagram-ctf">
+        <div class="flow-node">CHALLENGE</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">OBSERVE</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">INVESTIGATE</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">SOLVE</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node flow-node-flag">FLAG</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">POINTS</div>
+      </div>
+      <p class="lead-quote">Un CTF — Capture The Flag — este o competiție de provocări în care cauți flag-uri ascunse.</p>
+      <p class="flag-example">FLAG{YOU_FOUND_IT}</p>
+      <div class="category-grid">
+        <div class="cat-card"><h3>WEB</h3><p>HTML · DevTools · HTTP</p></div>
+        <div class="cat-card"><h3>CRYPTO</h3><p>Encoding · Ciphers</p></div>
+        <div class="cat-card"><h3>OSINT</h3><p>Search · Metadata</p></div>
+        <div class="cat-card"><h3>CODE</h3><p>Logic · Python</p></div>
+        <div class="cat-card"><h3>NETWORK</h3><p>Traffic · Packets</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 START CTF -->
+  <section class="slide" id="s12" data-index="12">
+    <div class="container narrow center-text">
+      <h2 class="h-display huge">OK.<br>ACUM E RÂNDUL VOSTRU.</h2>
+      <p class="meta-line"><span>90 MINUTES</span><span class="dot">·</span><span>10+ CHALLENGES</span></p>
+      <div class="rules-grid">
+        <div class="rules-col rules-yes">
+          <p>✓ Google este permis</p>
+          <p>✓ Poți cere ajutor</p>
+          <p>✓ Poți colabora</p>
+          <p>✓ Poți folosi documentația</p>
+          <p>✓ Este normal să te blochezi</p>
+        </div>
+        <div class="rules-col rules-no">
+          <p>✕ Nu ataca site-uri reale</p>
+          <p>✕ Nu testa tehnici pe sisteme fără permisiune</p>
+          <p>✕ Nu încerca să spargi conturi reale</p>
+        </div>
+      </div>
+      <p class="lead-quote">Curiozitatea este încurajată.<br>Atacul fără permisiune nu.</p>
+      <button class="btn btn-primary btn-large" id="openCtfdBtn">OPEN CTFd →</button>
+      <p class="ctfd-warning" id="ctfdWarning"></p>
+    </div>
+  </section>
+
+</main>
+
+<nav class="nav-controls">
+  <button class="nav-btn" id="prevBtn" aria-label="Secțiunea anterioară">← BACK</button>
+  <button class="nav-btn" id="nextBtn" aria-label="Secțiunea următoare">NEXT →</button>
+</nav>
+
+<div class="menu-overlay" id="menuOverlay" role="dialog" aria-label="Meniu secțiuni">
+  <div class="menu-panel">
+    <p class="menu-title">SECȚIUNI</p>
+    <ol class="menu-list" id="menuList"></ol>
+    <p class="menu-hint">ESC pentru a închide</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
